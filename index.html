@@ -4,20 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador Café Sustentável - Agrinho 2026</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f1; color: #333; text-align: center; padding: 20px; }
-        .container { max-width: 800px; margin: auto; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
-        h1 { color: #2e7d32; }
-        .stats { display: flex; justify-content: space-around; margin-bottom: 20px; background: #e8f5e9; padding: 15px; border-radius: 10px; }
-        .stat-box { font-size: 1.2rem; font-weight: bold; }
-        #prod-val { color: #1565c0; }
-        #env-val { color: #2e7d32; }
-        .options { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-        button { padding: 15px; font-size: 1rem; cursor: pointer; border: none; border-radius: 8px; transition: 0.3s; background: #388e3c; color: white; }
-        button:hover { background: #2e7d32; transform: translateY(-2px); }
-        button:disabled { background: #ccc; cursor: not-allowed; }
-        .message { margin-top: 20px; font-style: italic; color: #555; min-height: 24px; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -42,24 +29,5 @@
     <button onclick="reset()" style="margin-top: 30px; background: #795548;">Reiniciar Simulação</button>
 </div>
 
-<script>
-    let producao = 50;
-    let ambiente = 50;
-
-    function update(p, a, txt) {
-        // Atualiza os valores garantindo que fiquem entre 0 e 100
-        producao = Math.min(Math.max(producao + p, 0), 100);
-        ambiente = Math.min(Math.max(ambiente + a, 0), 100);
-
-        // Atualiza a tela
-        document.getElementById('prod-val').innerText = producao;
-        document.getElementById('env-val').innerText = ambiente;
-        document.getElementById('msg').innerText = txt;
-
-        checkStatus();
-    }
-
-    function checkStatus() {
-        if (producao >= 80 && ambiente >= 80) {
-            document.getElementById('msg').innerHTML = "<strong>🏆 Equilíbrio Perfeito! Você é um mestre do Agro Sustentável!</strong>";
+<script src="script.js"></script>
         } else if (ambiente < 20
