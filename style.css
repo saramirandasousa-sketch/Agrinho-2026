@@ -1,0 +1,128 @@
+/* Configurações Gerais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    color: #2e3436;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container Principal */
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 8px solid #2e7d32;
+}
+
+h1 {
+    color: #1b5e20;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Painel de Status */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    background: #f1f8e9;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 1px solid #c8e6c9;
+}
+
+.stat-box {
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#prod-val { color: #1565c0; } /* Azul para produção */
+#env-val { color: #2e7d32; }  /* Verde para meio ambiente */
+
+/* Mensagens de Feedback */
+.message {
+    margin: 20px 0;
+    padding: 15px;
+    font-size: 1.1rem;
+    min-height: 50px;
+    color: #444;
+    border-left: 5px solid #81c784;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Grade de Botões/Opções */
+.options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 18px 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #388e3c;
+    color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background-color: #2e7d32;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Botão de Reiniciar */
+.reset-btn {
+    margin-top: 35px;
+    background-color: #795548;
+    width: 100%;
+}
+
+.reset-btn:hover {
+    background-color: #5d4037;
+}
+
+/* Responsividade para celulares */
+@media (max-width: 600px) {
+    .options {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
